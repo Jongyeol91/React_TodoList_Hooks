@@ -11,8 +11,8 @@ const TodoForm = ({ addTodo }) => {
             addTodo(value);
             reset();
         }}>
-            <Paper>
-                <TextField value={value} onChange={handleChange}/>
+            <Paper style={{margin: '1rem 0', padding: '0 1rem'}}>
+                <TextField value={value} onChange={handleChange} margin="normal" label="입력하세요"/>
             </Paper>
         </form>
     )

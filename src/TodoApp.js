@@ -7,10 +7,11 @@ import Grid from '@material-ui/core/Grid';
 import TodoList from './TodoList';
 import TodoForm from './TodoForm';
 
+
 function TodoApp () {
     const initialTodos = [
         { id: 1, task: "리액트 강의", completed: false },
-        { id: 2, task: "유즈 리듀서 공부", completed: false },
+        { id: 2, task: "유즈 리듀서 공부", completed: true },
         { id: 3, task: "리덕스 강의", completed: false },
     ]
     const [todos, setTodos] = useState(initialTodos);
@@ -32,8 +33,12 @@ function TodoApp () {
                     <Typography color='inherit'>TODOS WITH HOOKS</Typography>
                 </ToolBar>
             </AppBar>
-            <TodoForm addTodo={addTodo} />
-            <TodoList todos={todos} />
+            <Grid container justify="center" style={{marginTop: "1rem"}}>
+                <Grid item xs={12} md={8} lg={4}>
+                    <TodoForm addTodo={addTodo} />
+                    <TodoList todos={todos} />
+                </Grid>
+            </Grid>
         </Paper>
     )
 }
