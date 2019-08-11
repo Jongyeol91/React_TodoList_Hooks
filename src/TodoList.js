@@ -4,14 +4,14 @@ import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import Todo from './Todo'
 
-function TodoList({todos, removeTodo, ToggleTodo}) {
+function TodoList({todos, removeTodo, ToggleTodo, EditTodo}) {
     return (
         <Paper>
             <List>
-            {todos.map(todo => (
+            {todos.map((todo, i) => (
                 <>
-                    <Todo task={todo.task} completed={todo.completed} removeTodo={removeTodo} id={todo.id} ToggleTodo={ToggleTodo} />
-                    <Divider/>
+                    <Todo task={todo.task} completed={todo.completed} removeTodo={removeTodo} id={todo.id} ToggleTodo={ToggleTodo} EditTodo={EditTodo} />
+                    { i < todos.length -1  && <Divider/>}
                 </>
             ))}
             </List>
