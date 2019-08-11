@@ -8,7 +8,6 @@ import TodoList from './TodoList';
 import TodoForm from './TodoForm';
 import uuid from 'uuid/v4'
 
-
 function TodoApp () {
     const initialTodos = [
         { id: 1, task: "리액트 강의", completed: false },
@@ -22,6 +21,11 @@ function TodoApp () {
 
     const removeTodo = (todoId) => {
         setTodos(todos.filter(todo => todoId !== todo.id))
+    }
+
+    const ToggleTodo = todoId => {
+        const updatedTodos = todos.map(todo => todoId === todo.id ? { ...todo, completed: !todo.completed } : todo);
+        setTodos(updatedTodos);
     }
 
     return(
@@ -41,7 +45,7 @@ function TodoApp () {
             <Grid container justify="center" style={{marginTop: "1rem"}}>
                 <Grid item xs={12} md={8} lg={4}>
                     <TodoForm addTodo={addTodo} />
-                    <TodoList todos={todos} removeTodo={removeTodo} />
+                    <TodoList todos={todos} removeTodo={removeTodo} ToggleTodo={ToggleTodo}/>
                 </Grid>
             </Grid>
         </Paper>
