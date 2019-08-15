@@ -1,3 +1,7 @@
+useReducer, useContext 및 customhooks를 활용한 ToDoList리스트입니다.
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
